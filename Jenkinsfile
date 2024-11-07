@@ -4,7 +4,7 @@ pipeline {
     environment {
         // You can modify the path according to your setup
         SELENIUM_TEST_DIR = 'path/to/your/selenium/tests' // Path to your Selenium test project
-        HTML_REPORT_DIR = ' test-output/testng-results.html' // TestNG result report location
+        HTML_REPORT_DIR = 'target/surefire-reports/emailable-report.html' // TestNG result report location
         EMAIL_RECIPIENTS = 'nguyenquy1409@gmail.com' // Add your email here
     }
 
@@ -28,7 +28,7 @@ pipeline {
         stage('Archive Test Results') {
             steps {
                 // Archive the TestNG report
-                junit '**/test-output/testng-results.xml' // Path to your TestNG XML results
+                junit '**/target/surefire-reports/emailable-report.html' // Path to your TestNG XML results
             }
         }
 
