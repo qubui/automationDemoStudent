@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Run Selenium tests using TestNG
-                    sh "mvn test -DsuiteXmlFile=testng.xml" // Adjust if you have a specific test suite
+                       "mvn test -DsuiteXmlFile=testng.xml" // Adjust if you have a specific test suite
                 }
             }
         }
