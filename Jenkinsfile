@@ -28,7 +28,7 @@ pipeline {
         stage('Archive Test Results') {
             steps {
                 // Archive the TestNG report
-                junit '**/target/test-classes/testng-results.xml' // Path to your TestNG XML results
+                junit '**/test-output/testng-results.xml' // Path to your TestNG XML results
             }
         }
 
