@@ -1,27 +1,76 @@
 pipeline {
     agent any
- 
+
+    environment {
+        // You can modify the path according to your setup
+        SELENIUM_TEST_DIR = 'path/to/your/selenium/tests' // Path to your Selenium test project
+        HTML_REPORT_DIR = ' test-output/testng-results.html' // TestNG result report location
+        EMAIL_RECIPIENTS = 'nguyenquy1409@gmail.com' // Add your email here
+    }
+
     stages {
-        stage('Test') {
+        stage('Checkout') {
             steps {
-                bat "mvn -D clean test"
+                // Checkout your repository with Selenium tests
+                checkout scm
             }
- 
-            post {                
-                // If Maven was able to run the tests, even if some of the test
-                // failed, record the test results and archive the jar file.
-                success {
-                   publishHTML([
-                       allowMissing: false, 
-                       alwaysLinkToLastBuild: false, 
-                       keepAll: false, 
-                       reportDir: 'target/surefire-reports/', 
-                       reportFiles: 'emailable-report.html', 
-                       reportName: 'HTML Report', 
-                       reportTitles: '', 
-                       useWrapperFileDirectly: true])
+        }
+
+        stage('Install Dependencies') {
+            steps {
+                script {
+                    // Install necessary dependencies like Maven, dependencies, etc.
+                    sh 'mvn clean install -DskipTests'
                 }
             }
+        }
+
+        stage('Run Tests') {
+            steps {
+                script {
+                    // Run Selenium tests using TestNG
+                    sh "mvn test -DsuiteXmlFile=testng.xml" // Adjust if you have a specific test suite
+                }
+            }
+        }
+
+        stage('Archive Test Results') {
+            steps {
+                // Archive the TestNG report
+                junit '**/target/test-classes/testng-results.xml' // Path to your TestNG XML results
+            }
+        }
+
+        stage('Email Report') {
+            steps {
+                script {
+                    // Send email with the HTML report attached
+                    emailext(
+                        subject: "Test Results - ${currentBuild.fullDisplayName}",
+                        body: "Please find the attached test report for the executed Selenium TestNG tests.",
+                        to: "${EMAIL_RECIPIENTS}",
+                        attachLog: true,
+                        attachmentsPattern: HTML_REPORT_DIR
+                    )
+                }
+            }
+        }
+    }
+
+    // Schedule the pipeline (use cron-like syntax)
+    triggers {
+        cron('H 2 * * 1') // Example: every Monday at 2:00 AM
+    }
+
+    post {
+        always {
+            cleanWs() // Clean workspace after the build is done
+        }
+        success {
+            echo 'Tests ran successfully!'
+        }
+        failure {
+            echo 'Tests failed!'
         }
     }
 }
