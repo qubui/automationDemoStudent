@@ -16,15 +16,6 @@ pipeline {
             }
         }
 
-        stage('Install Dependencies') {
-            steps {
-                script {
-                    // Install necessary dependencies like Maven, dependencies, etc.
-                    sh 'mvn clean install -DskipTests'
-                }
-            }
-        }
-
         stage('Run Tests') {
             steps {
                 script {
