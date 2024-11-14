@@ -1,25 +1,65 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-14T11:31:15 ICT" name="Default suite" finished-at="2024-11-14T11:31:25 ICT" duration-ms="10287">
+  <suite started-at="2024-11-14T14:19:51 ICT" name="Default suite" finished-at="2024-11-14T14:20:44 ICT" duration-ms="53121">
     <groups>
     </groups>
-    <test started-at="2024-11-14T11:31:15 ICT" name="Default test" finished-at="2024-11-14T11:31:25 ICT" duration-ms="10287">
+    <test started-at="2024-11-14T14:19:51 ICT" name="Default test" finished-at="2024-11-14T14:20:44 ICT" duration-ms="53121">
       <class name="tests.FakePricingPageTest">
-        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.FakePricingPageTest@3ba987b8]" started-at="2024-11-14T11:31:15 ICT" name="launchApplication" finished-at="2024-11-14T11:31:21 ICT" duration-ms="6829" status="PASS">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.FakePricingPageTest@63798ca7]" started-at="2024-11-14T14:19:51 ICT" name="launchApplication" finished-at="2024-11-14T14:19:59 ICT" duration-ms="8899" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchApplication -->
-        <test-method signature="VerifyNotAvailableBenefitForEachModel()[pri:0, instance:tests.FakePricingPageTest@3ba987b8]" started-at="2024-11-14T11:31:21 ICT" name="VerifyNotAvailableBenefitForEachModel" finished-at="2024-11-14T11:31:24 ICT" duration-ms="2471" status="PASS">
+        <test-method signature="VerifyNotAvailableBenefitForEachModel()[pri:0, instance:tests.FakePricingPageTest@63798ca7]" started-at="2024-11-14T14:19:59 ICT" name="VerifyNotAvailableBenefitForEachModel" finished-at="2024-11-14T14:20:02 ICT" duration-ms="2515" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- VerifyNotAvailableBenefitForEachModel -->
-        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FakePricingPageTest@3ba987b8]" started-at="2024-11-14T11:31:24 ICT" name="tearDown" finished-at="2024-11-14T11:31:25 ICT" duration-ms="961" status="PASS">
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FakePricingPageTest@63798ca7]" started-at="2024-11-14T14:20:02 ICT" name="tearDown" finished-at="2024-11-14T14:20:03 ICT" duration-ms="888" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
       </class> <!-- tests.FakePricingPageTest -->
+      <class name="tests.FillOutFormsTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.FillOutFormsTest@4612b856]" started-at="2024-11-14T14:20:03 ICT" name="launchApplication" finished-at="2024-11-14T14:20:08 ICT" duration-ms="5583" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="VerirySubmitEmtryDataForCaptchaForm()[pri:0, instance:tests.FillOutFormsTest@4612b856]" started-at="2024-11-14T14:20:08 ICT" name="VerirySubmitEmtryDataForCaptchaForm" finished-at="2024-11-14T14:20:10 ICT" duration-ms="1463" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerirySubmitEmtryDataForCaptchaForm -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.FillOutFormsTest@4612b856]" started-at="2024-11-14T14:20:10 ICT" name="tearDown" finished-at="2024-11-14T14:20:11 ICT" duration-ms="920" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.FillOutFormsTest -->
+      <class name="tests.LoginAutomationTest">
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.LoginAutomationTest@5674e1f2]" started-at="2024-11-14T14:20:11 ICT" name="launchApplication" finished-at="2024-11-14T14:20:16 ICT" duration-ms="5229" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="VerifyLoginWithEmptyUserNameAndPassword()[pri:0, instance:tests.LoginAutomationTest@5674e1f2]" started-at="2024-11-14T14:20:16 ICT" name="VerifyLoginWithEmptyUserNameAndPassword" finished-at="2024-11-14T14:20:25 ICT" duration-ms="8639" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLoginWithEmptyUserNameAndPassword -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginAutomationTest@5674e1f2]" started-at="2024-11-14T14:20:25 ICT" name="tearDown" finished-at="2024-11-14T14:20:26 ICT" duration-ms="936" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+        <test-method is-config="true" signature="launchApplication()[pri:0, instance:tests.LoginAutomationTest@5674e1f2]" started-at="2024-11-14T14:20:26 ICT" name="launchApplication" finished-at="2024-11-14T14:20:31 ICT" duration-ms="5191" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchApplication -->
+        <test-method signature="VerifySignUpSuccessfully()[pri:0, instance:tests.LoginAutomationTest@5674e1f2]" started-at="2024-11-14T14:20:31 ICT" name="VerifySignUpSuccessfully" finished-at="2024-11-14T14:20:43 ICT" duration-ms="11968" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifySignUpSuccessfully -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:tests.LoginAutomationTest@5674e1f2]" started-at="2024-11-14T14:20:43 ICT" name="tearDown" finished-at="2024-11-14T14:20:44 ICT" duration-ms="863" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- tests.LoginAutomationTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

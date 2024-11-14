@@ -62,19 +62,16 @@ public class BaseTest {
 	 				+ "\\src\\main\\java\\resources\\chromedriver.exe");
 			ChromeOptions options = new ChromeOptions();
 			options.addArguments("--remote-allow-origins=*");
-			options.addArguments("--headless");
 			WebDriverManager.chromedriver().setup();
 			if(browserName.contains("headless")){
 			options.addArguments("headless");
 			}		
 			driver = new ChromeDriver(options);
-			driver.manage().window().setSize(new Dimension(1920,1080));//full screen
+			driver.manage().window().setSize(new Dimension(1440,900));//full screen
 			
 		} else if (browserName.contains("firefox")) {
 			System.setProperty("webdriver.gecko.driver", System.getProperty("user.dir")
 	 				+"\\src\\main\\java\\resources\\geckodriver.exe");
-			FirefoxOptions options = new FirefoxOptions();
-			options.addArguments("--width=1920", "--height=1080");
 			  driver = new FirefoxDriver();
 			
 		} else if (browserName.contains("edge")) {
@@ -82,7 +79,6 @@ public class BaseTest {
 			System.setProperty("webdriver.edge.driver", System.getProperty("user.dir")
 	 				+"//src//main//java//resources//msedgedriver.exe");
 			EdgeOptions options = new EdgeOptions();
-			options.addArguments("--headless");
 			options.addArguments("--remote-allow-origins=*");
 			WebDriverManager.edgedriver().setup();
 			if(browserName.contains("headless")){

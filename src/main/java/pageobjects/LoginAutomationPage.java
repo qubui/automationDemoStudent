@@ -70,6 +70,7 @@ public class LoginAutomationPage extends AbstractComponent{
 		
 		public CreateNewAccountPage GotoCreateNewAccountPage()
 		{
+			scrollToElement(lnkCreateNewAccount);
 			waitForWebElementToAppear(lnkCreateNewAccount);
 			lnkCreateNewAccount.click();
 			CreateNewAccountPage createNewAccountPage = new CreateNewAccountPage(driver);
