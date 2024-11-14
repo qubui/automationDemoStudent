@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
@@ -7,9 +7,16 @@
         <methods>
           <include name="launchApplication"/>
           <include name="tearDown"/>
-          <include name="VerifyLoginWithEmptyUserNameAndPassword"/>
+          <include name="VerifySignUpSuccessfully"/>
         </methods>
       </class> <!-- tests.LoginAutomationTest -->
+      <class name="tests.FillOutFormsTest">
+        <methods>
+          <include name="launchApplication"/>
+          <include name="tearDown"/>
+          <include name="VerirySubmitEmtryDataForCaptchaForm"/>
+        </methods>
+      </class> <!-- tests.FillOutFormsTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
