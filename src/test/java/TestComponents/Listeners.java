@@ -20,6 +20,7 @@ public class Listeners extends BaseTest implements ITestListener{
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
+		System.out.println("Test started: " + result.getName());
 		test = extent.createTest(result.getMethod().getMethodName());
 		extentTest.set(test);//unique thread id(ErrorValidationTest)->test
 	}
@@ -27,7 +28,8 @@ public class Listeners extends BaseTest implements ITestListener{
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stub
-		extentTest.get().log(Status.PASS, "Test Passed");
+		System.out.println("Test passed: " + result.getName());
+		extentTest.get().log(Status.PASS, "Test Passed: " + result.getName());
 		
 	}
 
@@ -56,7 +58,7 @@ public class Listeners extends BaseTest implements ITestListener{
 			e.printStackTrace();
 		}
 		extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
-		
+		System.out.println("Test failed: " + result.getName());
 		
 		//Screenshot, Attach to report
 		
@@ -66,7 +68,7 @@ public class Listeners extends BaseTest implements ITestListener{
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		
+		 System.out.println("Test skipped: " + result.getName());
 	}
 
 	@Override
@@ -84,6 +86,7 @@ public class Listeners extends BaseTest implements ITestListener{
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
+		System.out.println("Test Suite finished: " + context.getName());
 		extent.flush();
 		
 	}
