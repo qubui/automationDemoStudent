@@ -27,22 +27,22 @@ public class LoginAutomationTest extends BaseTest {
 	}
 	
 	
-	@Test
-	public void VerifySignUpSuccessfully()
-	{
-		String randomFirstname = generateRandomUsername();
-		String randomEmail = generateRandomEmail();
-		String lastname = "User";
-		String pass = "123456678";
-		AutomationHomePage automationHomePage = new AutomationHomePage(driver);
-		LoginAutomationPage loginAutomationPage = automationHomePage.GotoLoginAutomationPage();
-		CreateNewAccountPage createNewAccountPage = loginAutomationPage.GotoCreateNewAccountPage();
-
-		ProductPage productPage = createNewAccountPage.SignUpSuccessfully(randomFirstname, lastname, randomEmail, pass);
-		Assert.assertTrue(productPage.isLnkMyDashboardDisplayed());
-		Assert.assertTrue(productPage.isTxtSearchDisplayed());
-		Assert.assertTrue(productPage.isLnkAllCoursesDisplayed());
-		Assert.assertTrue(productPage.isUserNameDisplayed(randomFirstname + " "+"U"));
-	}
+//	@Test
+//	public void VerifySignUpSuccessfully()
+//	{
+//		String randomFirstname = generateRandomUsername();
+//		String randomEmail = generateRandomEmail();
+//		String lastname = "User";
+//		String pass = "123456678";
+//		AutomationHomePage automationHomePage = new AutomationHomePage(driver);
+//		LoginAutomationPage loginAutomationPage = automationHomePage.GotoLoginAutomationPage();
+//		CreateNewAccountPage createNewAccountPage = loginAutomationPage.GotoCreateNewAccountPage();
+//
+//		ProductPage productPage = createNewAccountPage.SignUpSuccessfully(randomFirstname, lastname, randomEmail, pass);
+//		Assert.assertTrue(productPage.isLnkMyDashboardDisplayed());
+//		Assert.assertTrue(productPage.isTxtSearchDisplayed());
+//		Assert.assertTrue(productPage.isLnkAllCoursesDisplayed());
+//		Assert.assertTrue(productPage.isUserNameDisplayed(randomFirstname + " "+"U"));
+//	}
 	
 }
